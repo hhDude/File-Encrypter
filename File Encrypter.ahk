@@ -19,9 +19,9 @@ guicontrol +g, % encryptfiles, % encrypt
 guicontrol +g, % decryptfiles, % decrypt
 gui main:show
 
-crypt(state, directory := "") {
+crypt(state) {
     gui main:submit, nohide
-    fileselectfile, files, m, % directory, % (state ? "Encryption" : "Decryption") " Selection"
+    fileselectfile, files, m,, % (state ? "Encryption" : "Decryption") " Selection"
     if errorlevel
         return
     array := strsplit(files, "`n", "`r")
