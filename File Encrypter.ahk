@@ -1,4 +1,4 @@
-﻿#singleinstance force
+#singleinstance force
 #include Lib/crypt.ahk
 #include Lib/cryptconst.ahk
 #include Lib/cryptfoos.ahk
@@ -33,14 +33,8 @@ crypt(state, directory := "") {
     if !fileexist(cryptdir)
         filecreatedir % cryptdir
     bytes := 0
-    if state {
-        for k, v in array
-            bytes += crypt.encrypt.fileencrypt(fromdir v, cryptdir v, pass, ealg, halg)
-    }
-    else {
-        for k, v in array
-            bytes += crypt.encrypt.filedecrypt(fromdir v, cryptdir v, pass, ealg, halg)
-    }
+    for k, v in array
+        bytes += state ? crypt.encrypt.fileencrypt(fromdir v, cryptdir v, pass, ealg, halg) : crypt.encrypt.filedecrypt(fromdir v, cryptdir v, pass, ealg, halg)
     traytip, % "Finished " (state ? "Encrypting" : "Decrypting"), % bytes " bytes " (state ? "Encrypted" : "Decrypted") " and written to disk.",, 33
 }
 
