@@ -1,7 +1,7 @@
 # File-Encrypter
 
 A minimalistic GUI for file encryption/decryption.
-Uses a modified version of [Deo's Crypt.ahk lib](https://autohotkey.com/board/topic/67155-ahk-l-crypt-ahk-cryptography-class-encryption-hashing/)
+Uses a slightly modified version of [Deo's Crypt.ahk lib](https://autohotkey.com/board/topic/67155-ahk-l-crypt-ahk-cryptography-class-encryption-hashing/) (literally all i did was disable its ability to bombard you with error messages on an incorrect decryption password)
 
 Just pick your preferred encryption & hashing algorithms and enter a password to be used when decrypting. A new folder containing whatever was encrypted will be created in the same directory as the selected files.
 
